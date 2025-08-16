@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "Produto 1",
+        "descricao": "Descrição do produto 1",
+        "valor": "100.00",
+        "detalhes": "Detalhes do produto 1",
+        "tamanho": "M",
+        "imagem": "/static/images/produto1.jpg"
+    },
+    {
+        "nome": "Produto 2",
+        "descricao": "Descrição do produto 2",
+        "valor": "150.00",
+        "detalhes": "Detalhes do produto 2",
+        "tamanho": "L",
+        "imagem": "/static/images/produto2.jpg"
+    }
+]

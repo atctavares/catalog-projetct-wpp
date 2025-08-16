@@ -1,0 +1,36 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.db
+*.sqlite3
+
+# Venv (ambiente virtual)
+venv/
+.env/
+
+# Dependências do Python
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+
+# Arquivos de logs
+*.log
+
+# Arquivos de configuração do IDE (Ex: VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Arquivos temporários de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos do Flask
+instance/
+*.db
+
+# Arquivos de configuração do Vercel (você pode querer incluir .vercel/)
+.vercel/

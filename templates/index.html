@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="/static/css/styles.css"> <!-- Atualizado para /static/css -->
+</head>
+<body>
+    <div class="container">
+        <h1>Catálogo de Produtos</h1>
+        <div class="produtos">
+            {% for produto in produtos %}
+                <div class="card">
+                    <img src="{{ produto['imagem'] }}" alt="{{ produto['nome'] }}">
+                    <h2>{{ produto['nome'] }}</h2>
+                    <p>{{ produto['descricao'] }}</p>
+                    <p><strong>Valor:</strong> R$ {{ produto['valor'] }}</p>
+                    <p><strong>Detalhes:</strong> {{ produto['detalhes'] }}</p>
+                    <p><strong>Tamanho/Volume:</strong> {{ produto['tamanho'] }}</p>
+                    <a href="https://wa.me/SEUNUMERODEWHATSAPP?text=Quero%20saber%20mais%20sobre%20o%20produto%20{{ produto['nome'] }}" target="_blank" class="whatsapp-btn">Comprar no WhatsApp</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
