@@ -15,7 +15,7 @@ app = Flask(
 NUMERO_WHATSAPP = "5592981934569"
 
 def carregar_produtos():
-    caminho = os.path.join(BASE_DIR, 'products.json')  # products.json dentro de api/
+    caminho = os.path.join(BASE_DIR, '..', 'products.json')  # products.json dentro de api/
     with open(caminho, 'r', encoding="utf-8") as f:
         return json.load(f)
 
