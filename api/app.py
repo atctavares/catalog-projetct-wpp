@@ -4,7 +4,7 @@ import urllib.parse
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-NUMERO_WHATSAPP = "5592999999999"
+NUMERO_WHATSAPP = "5592981934569"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # pega caminho da pasta api/
 
@@ -28,4 +28,4 @@ def index():
     🖼️ Imagem: {base_url}{p['imagem']}"""
         p["whatsapp_url"] = f"https://wa.me/{NUMERO_WHATSAPP}?text={urllib.parse.quote(mensagem)}"
 
-    return render_template('index.html', produtos=produtos)
+    return render_template('/templates/index.html', produtos=produtos)
