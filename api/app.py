@@ -3,8 +3,7 @@ import json
 import urllib.parse
 from flask import Flask, render_template, request
 
-# Caminhos absolutos
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # pasta api/
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # agora api/
 
 app = Flask(
     __name__,
@@ -15,7 +14,7 @@ app = Flask(
 NUMERO_WHATSAPP = "5592981934569"
 
 def carregar_produtos():
-    caminho = os.path.join(BASE_DIR, '..', 'products.json')  # products.json dentro de api/
+    caminho = os.path.join(BASE_DIR, 'products.json')
     with open(caminho, 'r', encoding="utf-8") as f:
         return json.load(f)
 
@@ -36,5 +35,3 @@ def index():
 
     return render_template('index.html', produtos=produtos)
 
-if __name__ == "__main__":
-    app.run(debug=True)
