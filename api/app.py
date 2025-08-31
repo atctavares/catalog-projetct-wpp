@@ -3,13 +3,19 @@ import json
 import urllib.parse
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+# Caminhos absolutos
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # pasta api/
+
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, 'templates'),
+    static_folder=os.path.join(BASE_DIR, 'static')
+)
+
 NUMERO_WHATSAPP = "5592981934569"
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # pega caminho da pasta api/
-
 def carregar_produtos():
-    caminho = os.path.join(BASE_DIR, '..', 'products.json')  # volta um nível
+    caminho = os.path.join(BASE_DIR, 'products.json')  # products.json dentro de api/
     with open(caminho, 'r', encoding="utf-8") as f:
         return json.load(f)
 
@@ -20,12 +26,15 @@ def index():
 
     for p in produtos:
         mensagem = f"""Olá! Tenho interesse neste produto:
-    📦 Nome: {p['nome']}
-    💲 Valor: R$ {p['valor']}
-    📌 Descrição: {p['descricao']}
-    📑 Detalhes: {p['detalhes']}
-    📏 Tamanho: {p['tamanho']}
-    🖼️ Imagem: {base_url}{p['imagem']}"""
+📦 Nome: {p['nome']}
+💲 Valor: R$ {p['valor']}
+📌 Descrição: {p['descricao']}
+📑 Detalhes: {p['detalhes']}
+📏 Tamanho: {p['tamanho']}
+🖼️ Imagem: {base_url}{p['imagem']}"""
         p["whatsapp_url"] = f"https://wa.me/{NUMERO_WHATSAPP}?text={urllib.parse.quote(mensagem)}"
 
-    return render_template('/templates/index.html', produtos=produtos)
+    return render_template('index.html', produtos=produtos)
+
+if __name__ == "__main__":
+    app.run(debug=True)
