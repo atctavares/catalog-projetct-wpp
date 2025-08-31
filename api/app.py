@@ -20,12 +20,12 @@ def index():
 
     for p in produtos:
         mensagem = f"""Olá! Tenho interesse neste produto:
-        📦 Nome: {p['nome']}
-        💲 Valor: R$ {p['valor']}
-        📌 Descrição: {p['descricao']}
-        📑 Detalhes: {p['detalhes']}
-        📏 Tamanho: {p['tamanho']}
-        🖼️ Imagem: {base_url}{p['imagem']}"""
-                p["whatsapp_url"] = f"https://wa.me/{NUMERO_WHATSAPP}?text={urllib.parse.quote(mensagem)}"
+    📦 Nome: {p['nome']}
+    💲 Valor: R$ {p['valor']}
+    📌 Descrição: {p['descricao']}
+    📑 Detalhes: {p['detalhes']}
+    📏 Tamanho: {p['tamanho']}
+    🖼️ Imagem: {base_url}{p['imagem']}"""
+        p["whatsapp_url"] = f"https://wa.me/{NUMERO_WHATSAPP}?text={urllib.parse.quote(mensagem)}"
 
     return render_template('index.html', produtos=produtos)
