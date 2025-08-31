@@ -9,7 +9,7 @@ NUMERO_WHATSAPP = "5592999999999"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # pega caminho da pasta api/
 
 def carregar_produtos():
-    caminho = os.path.join(BASE_DIR, '..', '/products.json')  # volta um nível
+    caminho = os.path.join(BASE_DIR, '..', 'products.json')  # volta um nível
     with open(caminho, 'r', encoding="utf-8") as f:
         return json.load(f)
 
